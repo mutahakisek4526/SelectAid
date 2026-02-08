@@ -1,0 +1,71 @@
+<UserControl x:Class="SelectAid.Views.AAC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <GroupBox Header="History" Grid.Row="0">
+            <ListBox ItemsSource="{Binding History}" DisplayMemberPath="Text" />
+        </GroupBox>
+        <GroupBox Header="Compose" Grid.Row="1">
+            <TextBox Text="{Binding ComposeText}" FontSize="28" />
+        </GroupBox>
+        <GroupBox Header="Input" Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <ComboBox ItemsSource="{Binding Layouts}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedLayout}" />
+                <ItemsControl Grid.Row="1" ItemsSource="{Binding SelectedLayout.Grid}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ItemsControl ItemsSource="{Binding Cells}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <UniformGrid Columns="6" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button Content="{Binding Label}" Command="{Binding DataContext.ApplyKeyCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <ItemsControl Grid.Row="2" ItemsSource="{Binding Candidates}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="4" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding}" Command="{Binding DataContext.ApplyCandidateCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Control" Grid.Row="3">
+            <WrapPanel>
+                <Button Content="Speak" Command="{Binding SpeakCommand}" />
+                <Button Content="Backspace" Command="{Binding BackspaceCommand}" />
+                <Button Content="Clear" Command="{Binding ClearCommand}" />
+                <Button Content="Undo" Command="{Binding UndoCommand}" />
+                <Button Content="Buzzer" Command="{Binding BuzzerCommand}" />
+                <Button Content="Pause" Command="{Binding PauseCommand}" />
+                <Button Content="PC操作" Command="{Binding OverlayCommand}" />
+                <Button Content="定型文" Command="{Binding GoPhrasesCommand}" />
+                <Button Content="Home" Command="{Binding GoHomeCommand}" />
+            </WrapPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

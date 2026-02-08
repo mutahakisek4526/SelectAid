@@ -1,0 +1,31 @@
+<UserControl x:Class="SelectAid.Views.Phrases"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid ColumnDefinitions="*,*,*">
+            <ListBox ItemsSource="{Binding Scenes}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedScene}" />
+            <ListBox Grid.Column="1" ItemsSource="{Binding SelectedScene.Categories}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedCategory}" />
+            <ListBox Grid.Column="2" ItemsSource="{Binding SelectedCategory.Items}" DisplayMemberPath="Text" SelectedItem="{Binding SelectedItem}" />
+        </Grid>
+        <StackPanel Grid.Row="1">
+            <WrapPanel>
+                <TextBox Width="200" Text="{Binding NewSceneName}" />
+                <Button Content="場面追加" Command="{Binding AddSceneCommand}" />
+                <TextBox Width="200" Text="{Binding NewCategoryName}" />
+                <Button Content="カテゴリ追加" Command="{Binding AddCategoryCommand}" />
+                <TextBox Width="200" Text="{Binding NewPhraseText}" />
+                <Button Content="文追加" Command="{Binding AddPhraseCommand}" />
+            </WrapPanel>
+            <WrapPanel>
+                <Button Content="削除" Command="{Binding DeletePhraseCommand}" />
+                <Button Content="即発話" Command="{Binding SpeakPhraseCommand}" />
+                <Button Content="コピー" Command="{Binding CopyPhraseCommand}" />
+                <Button Content="戻る" Command="{Binding BackCommand}" />
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

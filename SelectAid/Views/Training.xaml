@@ -1,0 +1,17 @@
+<UserControl x:Class="SelectAid.Views.Training"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="12">
+        <TextBlock Text="練習モード" FontSize="24" FontWeight="Bold" />
+        <TextBlock Text="視線/ジャイロ/スキャンの練習" />
+        <WrapPanel>
+            <Button Content="成功" Command="{Binding HitCommand}" />
+            <Button Content="ミス" Command="{Binding MissCommand}" />
+        </WrapPanel>
+        <TextBlock Text="試行回数:" />
+        <TextBlock Text="{Binding Attempts}" />
+        <TextBlock Text="ミス回数:" />
+        <TextBlock Text="{Binding Misses}" />
+        <Button Content="戻る" Command="{Binding BackCommand}" />
+    </StackPanel>
+</UserControl>
