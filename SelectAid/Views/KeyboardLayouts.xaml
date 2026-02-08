@@ -1,0 +1,14 @@
+<UserControl x:Class="SelectAid.Views.KeyboardLayouts"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="12">
+        <TextBlock Text="文字盤レイアウト" FontSize="24" FontWeight="Bold" />
+        <ListBox ItemsSource="{Binding Layouts}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedLayout}" Height="300" />
+        <WrapPanel>
+            <Button Content="有効/無効" Command="{Binding EnableLayoutCommand}" />
+            <Button Content="追加" Command="{Binding AddLayoutCommand}" />
+            <Button Content="削除" Command="{Binding DeleteLayoutCommand}" />
+            <Button Content="戻る" Command="{Binding BackCommand}" />
+        </WrapPanel>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,22 @@
+<UserControl x:Class="SelectAid.Views.Supporter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="12">
+        <TextBlock Text="支援者モード" FontSize="24" FontWeight="Bold" />
+        <ListBox ItemsSource="{Binding Profiles}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedProfile}" Height="200" />
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="入力モード" Margin="0,0,12,0" />
+            <ComboBox Width="200" ItemsSource="{Binding InputModes}" SelectedItem="{Binding SelectedProfile.InputMode}" />
+        </StackPanel>
+        <CheckBox Content="CareLock" IsChecked="{Binding SelectedProfile.Safety.CareLockEnabled}" />
+        <CheckBox Content="Shutdown 許可" IsChecked="{Binding SelectedProfile.PCControl.AllowShutdown}" />
+        <CheckBox Content="Sleep 許可" IsChecked="{Binding SelectedProfile.PCControl.AllowSleep}" />
+        <CheckBox Content="Restart 許可" IsChecked="{Binding SelectedProfile.PCControl.AllowRestart}" />
+        <WrapPanel>
+            <Button Content="追加" Command="{Binding AddProfileCommand}" />
+            <Button Content="このプロファイルを使用" Command="{Binding SetActiveCommand}" />
+            <Button Content="保存" Command="{Binding SaveCommand}" />
+            <Button Content="戻る" Command="{Binding BackCommand}" />
+        </WrapPanel>
+    </StackPanel>
+</UserControl>

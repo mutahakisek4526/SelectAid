@@ -1,0 +1,12 @@
+{
+  "layouts": [
+    {
+      "name": "標準50音",
+      "type": "Kana50",
+      "enabled": true,
+      "grid": [
+        {"cells": [{"label": "あ", "outputText": "あ"}, {"label": "い", "outputText": "い"}, {"label": "う", "outputText": "う"}, {"label": "え", "outputText": "え"}, {"label": "お", "outputText": "お"}]}
+      ]
+    }
+  ]
+}

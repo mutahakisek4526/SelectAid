@@ -1,0 +1,12 @@
+<UserControl x:Class="SelectAid.Views.Logs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel Margin="12">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Button Content="更新" Command="{Binding RefreshCommand}" />
+            <Button Content="CSV出力" Command="{Binding ExportCsvCommand}" />
+            <Button Content="戻る" Command="{Binding BackCommand}" />
+        </StackPanel>
+        <TextBox Text="{Binding LogText}" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" />
+    </DockPanel>
+</UserControl>

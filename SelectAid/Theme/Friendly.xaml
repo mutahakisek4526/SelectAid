@@ -1,0 +1,8 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="PrimaryColor">#5B8CFF</Color>
+    <Color x:Key="BackgroundColor">#F6F8FF</Color>
+    <Color x:Key="AccentColor">#FFB84D</Color>
+    <CornerRadius x:Key="ControlCornerRadius">18</CornerRadius>
+    <Thickness x:Key="ControlPadding">18</Thickness>
+</ResourceDictionary>
