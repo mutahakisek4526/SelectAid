@@ -1,0 +1,50 @@
+<Application x:Class="SelectAid.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:views="clr-namespace:SelectAid.Views"
+             xmlns:viewModels="clr-namespace:SelectAid.ViewModels"
+             ShutdownMode="OnMainWindowClose">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
+            <views:Home />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:AacViewModel}">
+            <views:AAC />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:PhrasesViewModel}">
+            <views:Phrases />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:KeyboardLayoutsViewModel}">
+            <views:KeyboardLayouts />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:OverlayPanelViewModel}">
+            <views:OverlayPanel />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:SettingsViewModel}">
+            <views:Settings />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:SupporterViewModel}">
+            <views:Supporter />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:TrainingViewModel}">
+            <views:Training />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:LogsViewModel}">
+            <views:Logs />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:BackupRestoreViewModel}">
+            <views:BackupRestore />
+        </DataTemplate>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="6" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="MinHeight" Value="48" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <SolidColorBrush x:Key="AccentBrush" Color="#2D7FFF" />
+        <SolidColorBrush x:Key="HighlightBrush" Color="#FFCC00" />
+    </Application.Resources>
+</Application>

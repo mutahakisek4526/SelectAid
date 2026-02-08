@@ -1,0 +1,15 @@
+{
+  "scenes": [
+    {
+      "name": "生活",
+      "categories": [
+        {
+          "name": "お願い",
+          "items": [
+            {"phraseId": "sample1", "text": "水をください", "tags": ["水"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

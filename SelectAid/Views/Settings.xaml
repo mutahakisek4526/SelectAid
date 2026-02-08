@@ -1,0 +1,18 @@
+<UserControl x:Class="SelectAid.Views.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="12">
+        <TextBlock Text="設定" FontSize="24" FontWeight="Bold" />
+        <CheckBox Content="自動起動" IsChecked="{Binding AutoStartEnabled}" />
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Speech Rate" />
+            <TextBox Width="80" Text="{Binding Speech.Rate}" />
+            <TextBlock Text="Volume" Margin="12,0,0,0" />
+            <TextBox Width="80" Text="{Binding Speech.Volume}" />
+        </StackPanel>
+        <WrapPanel>
+            <Button Content="保存" Command="{Binding SaveCommand}" />
+            <Button Content="戻る" Command="{Binding BackCommand}" />
+        </WrapPanel>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,33 @@
+<Window x:Class="SelectAid.Overlay.OverlayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Overlay" Width="380" Height="520" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="#66000000">
+    <Border Background="#CCFFFFFF" CornerRadius="12" Padding="12">
+        <StackPanel>
+            <TextBlock Text="PC操作オーバーレイ" FontSize="22" FontWeight="Bold" />
+            <UniformGrid Columns="2" Rows="4">
+                <Button Content="Left" Click="LeftClick" />
+                <Button Content="Right" Click="RightClick" />
+                <Button Content="Double" Click="DoubleClick" />
+                <Button Content="DragStart" Click="DragStart" />
+                <Button Content="DragEnd" Click="DragEnd" />
+                <Button Content="ScrollUp" Click="ScrollUp" />
+                <Button Content="ScrollDown" Click="ScrollDown" />
+                <Button Content="MouseGrid" Click="MouseGrid" />
+            </UniformGrid>
+            <UniformGrid Columns="2" Rows="3">
+                <Button Content="Back" Click="Back" />
+                <Button Content="Tab" Click="Tab" />
+                <Button Content="Shift+Tab" Click="ShiftTab" />
+                <Button Content="Enter" Click="Enter" />
+                <Button Content="Space" Click="Space" />
+                <Button Content="Home" Click="Home" />
+            </UniformGrid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Pause" Click="Pause" />
+                <Button Content="透明/操作" Click="ToggleTransparent" />
+                <Button Content="閉じる" Click="CloseOverlay" />
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

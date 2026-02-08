@@ -1,0 +1,15 @@
+<UserControl x:Class="SelectAid.Views.BackupRestore"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="12">
+        <TextBlock Text="バックアップ/復元" FontSize="24" FontWeight="Bold" />
+        <Button Content="バックアップ作成" Command="{Binding BackupCommand}" />
+        <TextBlock Text="最後のバックアップ:" />
+        <TextBlock Text="{Binding LastBackupPath}" />
+        <StackPanel Orientation="Horizontal">
+            <TextBox Width="300" Text="{Binding RestorePath}" />
+            <Button Content="復元" Command="{Binding RestoreCommand}" />
+        </StackPanel>
+        <Button Content="戻る" Command="{Binding BackCommand}" />
+    </StackPanel>
+</UserControl>
